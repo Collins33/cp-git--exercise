@@ -1,0 +1,1 @@
+#contains all the routes and the functions to render html
