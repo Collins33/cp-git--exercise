@@ -15,6 +15,27 @@ class Form extends Component{
     }
 
     addItem(e){
+        //access the current state
+        var itemArray=this.state.items;
+
+        //check if the input field contains a value
+        if(this._inputElement.value !== ""){
+
+            itemArray.unshift({
+                text: this._inputElement.value,
+                key: Date.now()
+            })
+
+            //update the state
+            this.setState({
+                items:itemArray
+            })
+
+            //clear the input field
+            this._inputElement.value=""
+        }
+        console.log(itemArray);
+        e.preventDefault()
 
     }
     render(){
