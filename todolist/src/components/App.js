@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import Form from './form'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">TO-DO-LIST</h1>
         </header>
         
+        <Form />
       </div>
     );
   }
