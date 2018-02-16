@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Items from './items'
 
 class Form extends Component{
 
@@ -47,8 +48,8 @@ class Form extends Component{
             <input  className="form-control" placeholder="enter item" ref={(a) => this._inputElement=a}/>
             </div>
             <button className="btn btn-danger" type="submit">ADD ITEM</button>
-
             </form>
+            <Items entries={this.state.items}/>
             </div>
         )
     }
