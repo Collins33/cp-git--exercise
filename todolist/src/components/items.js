@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FlipMove from 'react-flip-move';
 
 class Items extends Component{
 constructor(props,context){
@@ -25,7 +26,9 @@ delete(key){
           <div className="row listRow">
           <h1 className="text-center">MY LIST</h1>
           <ul>
-              {listItems}
+          <FlipMove duration={250} easing="ease-out">
+            {listItems}
+          </FlipMove>
           </ul>
           </div>
       )
