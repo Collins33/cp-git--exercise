@@ -33,3 +33,6 @@ body{
   margin-left:35%;
   margin-right:35%  
 }
+ul {
+  list-style-type: none;
+}

@@ -5,10 +5,17 @@ constructor(props,context){
     super(props,context)
     //bind the createTask method
     this.createTask=this.createTask.bind(this);
+    this.delete=this.delete.bind(this);
 }
 
 createTask(item){
-    return <li key={item.key} className="well">{item.text}</li>
+    return <li key={item.key} className="well"
+    onClick={()=>this.delete(item.key)}>{item.text}</li>
+}
+
+//delete the list item
+delete(key){
+    this.props.delete(key)
 }
   render(){
       var todoEntries=this.props.entries;

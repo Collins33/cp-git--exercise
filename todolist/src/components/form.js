@@ -12,6 +12,7 @@ class Form extends Component{
         }
 
         this.addItem=this.addItem.bind(this)
+        this.deleteItem=this.deleteItem.bind(this)
 
     }
 
@@ -39,6 +40,19 @@ class Form extends Component{
         e.preventDefault()
 
     }
+
+    //method to delete item from array
+    deleteItem(key){
+        var filteredItems=this.state.items.filter(function(item){
+            return(item.key !==key)
+            //filter the old array by creating a new array where the key is not equal to the key of the clicked item
+        })
+
+        this.setState({
+            //set the state of to the new array
+            items:filteredItems
+        })
+    }
     render(){
         return(
             <div className="row">
@@ -49,7 +63,8 @@ class Form extends Component{
             </div>
             <button className="btn btn-danger" type="submit">ADD ITEM</button>
             </form>
-            <Items entries={this.state.items}/>
+            <Items entries={this.state.items}
+                    delete={this.deleteItem}/>
             </div>
         )
     }
